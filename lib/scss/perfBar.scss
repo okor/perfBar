@@ -1,0 +1,153 @@
+//colors
+$color_mine_shaft_approx: #333;
+$gallery: #efefef;
+$color_alto_approx: #dedede;
+$color_gallery_approx: #ededed;
+$white: #fff;
+$color_mountain_mist_approx: #999;
+$color_jade_approx: #00ad61;
+$color_red_orange_approx: #ff3535;
+
+//fonts
+$font_0: Proxima Nova;
+$font_1: arial;
+
+//@extend-elements
+//original selectors
+//#perfBar, #perfBar:before, #perfBar:after, #perfBar *, #perfBar *:before, #perfBar *:after
+%extend_1 {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  //Instead of the line below you could use @includebox-sizing($bs)
+  box-sizing: border-box;
+}
+
+
+#perfBar {
+  @extend %extend_1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  color: $color_mine_shaft_approx;
+  font-weight: 200;
+  font-family: $font_0, $font_1;
+  font-size: 16px;
+  background: #EFEFEF;
+  border-top: 1px solid $color_alto_approx;
+  &:before {
+    @extend %extend_1;
+  }
+  &:after {
+    @extend %extend_1;
+  }
+  * {
+    @extend %extend_1;
+    &:before {
+      @extend %extend_1;
+    }
+    &:after {
+      @extend %extend_1;
+    }
+  }
+  &:hover {
+    background: #EFEFEF;
+  }
+  &.perfBar-is-active {
+    background: #EFEFEF;
+    height: 250px;
+    .perfBar-bar:hover {
+      background: $color_gallery_approx;
+    }
+  }
+}
+.perfBar-bar {
+  padding: 0 30px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  line-height: 20px;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+}
+.perfBar-is-active {
+  .perfBar-bar {
+    border-bottom: 1px solid $color_gallery_approx;
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 1px 0 $color_alto_approx;
+  }
+  .perfBar-stats {
+    display: block;
+    overflow: auto;
+    max-height: 200px;
+  }
+}
+.perfBar-bar-circle {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background: $color_mountain_mist_approx;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 50%;
+}
+.perfBar-stats {
+  display: none;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    display: block;
+    width: 90%;
+  }
+  li {
+    padding: 15px;
+    width: 50%;
+    height: 100px;
+    float: left;
+  }
+}
+.perfBar-stat {
+  text-align: center;
+}
+.perfBar-valueUnit {
+  -webkit-font-smoothing: antialiased;
+  &.is-good {
+    color: #00AD61;
+  }
+  &.is-bad {
+    color: #FF3535;
+  }
+}
+.perfBar-value {
+  font-size: 2em;
+  font-weight: 600;
+}
+.perfBar-unit {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.perfBar-label {
+  margin-top: 5px;
+  color: $color_mountain_mist_approx;
+  font-weight: 200;
+  font-size: .8em;
+}
+.perfBar-cf {
+  *zoom: 1;
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+@media screen and(min-width: 700px) {
+  .perfBar-stats li {
+    width: 20%;
+  }
+}
