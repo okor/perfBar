@@ -12,6 +12,9 @@ module.exports = function(grunt) {
 
     sass: {
       dist: {
+        options: {
+          style: 'expanded'
+        },
         files: {
           'lib/perfBar.css': 'lib/scss/perfBar.scss'
         }
@@ -20,7 +23,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['lib/scss/perfBar.scss', 'lib/perfbar.js'],
-      tasks: ['exec:build']
+      tasks: ['sass', 'exec:build']
     }
 
   });
@@ -30,6 +33,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'exec:build', 'watch']);
 
 };

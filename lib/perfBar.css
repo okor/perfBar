@@ -1,7 +1,8 @@
-#perfBar, #perfBar:before, #perfBar:after, #perfBar *, #perfBar *:before, #perfBar *:after {
+#perfBar, #perfBar:before, #perfBar:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 #perfBar {
   position: fixed;
@@ -13,15 +14,12 @@
   font-weight: 200;
   font-family: Proxima Nova, arial;
   font-size: 16px;
-  background: #EFEFEF;
-  border-top: 1px solid #dedede; }
-  #perfBar:hover {
-    background: #EFEFEF; }
-  #perfBar.perfBar-is-active {
-    background: #EFEFEF;
-    height: 250px; }
-    #perfBar.perfBar-is-active .perfBar-bar:hover {
-      background: #ededed; }
+  border-top: 1px solid #dedede;
+  background-color: #000;
+}
+#perfBar.perfBar-is-active {
+  height: 250px;
+}
 
 .perfBar-bar {
   padding: 0 30px;
@@ -31,73 +29,90 @@
   line-height: 20px;
   text-align: center;
   color: #fff;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .perfBar-is-active .perfBar-bar {
-  border-bottom: 1px solid #ededed;
-  box-shadow: 0 1px 0 #dedede; }
+  border-bottom: 1px solid #EEBF49;
+}
 .perfBar-is-active .perfBar-stats {
   display: block;
   overflow: auto;
-  max-height: 200px; }
+  max-height: 200px;
+}
 
 .perfBar-bar-circle {
   display: inline-block;
   height: 5px;
   width: 5px;
-  background: #999;
-  border-radius: 50%; }
+  background: #EEBF49;
+  border-radius: 50%;
+}
 
 .perfBar-stats {
-  display: none; }
-  .perfBar-stats ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto 0;
-    display: block;
-    width: 90%; }
-  .perfBar-stats li {
-    padding: 15px;
-    width: 50%;
-    height: 100px;
-    float: left; }
+  display: none;
+}
+.perfBar-stats ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  display: block;
+  width: 90%;
+}
+.perfBar-stats li {
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  float: left;
+}
 
 .perfBar-stat {
-  text-align: center; }
+  text-align: center;
+}
 
 .perfBar-valueUnit {
-  -webkit-font-smoothing: antialiased; }
-  .perfBar-valueUnit.is-good {
-    color: #00AD61; }
-  .perfBar-valueUnit.is-bad {
-    color: #FF3535; }
+  -webkit-font-smoothing: antialiased;
+}
 
 .perfBar-value {
   font-size: 2em;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .perfBar-unit {
   font-size: 1.2em;
-  font-weight: 500; }
+  font-weight: 500;
+}
+
+.perfBar-value,
+.perfBar-unit {
+  color: #EEBF49;
+}
 
 .perfBar-label {
   margin-top: 5px;
   color: #999;
   font-weight: 200;
-  font-size: .8em; }
+  font-size: .8em;
+}
 
 .perfBar-cf {
-  zoom: 1; }
-  .perfBar-cf:before {
-    content: " ";
-    display: table; }
-  .perfBar-cf:after {
-    content: " ";
-    display: table;
-    clear: both; }
+  zoom: 1;
+}
+.perfBar-cf:before {
+  content: " ";
+  display: table;
+}
+.perfBar-cf:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
 
 @media screen and (min-width: 700px) {
   .perfBar-stats li {
-    width: 20%; } }
+    width: 20%;
+  }
+}
 
 /*# sourceMappingURL=perfBar.css.map */
