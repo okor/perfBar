@@ -135,7 +135,7 @@ $font_1: arial;
   font-size: .8em;
 }
 .perfBar-cf {
-  *zoom: 1;
+  zoom: 1;
   &:before {
     content: " ";
     display: table;

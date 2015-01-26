@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ['lib/scss/perfBar.scss'],
+      files: ['lib/scss/perfBar.scss', 'lib/perfbar.js'],
       tasks: ['exec:build']
     }
 

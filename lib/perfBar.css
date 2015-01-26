@@ -87,7 +87,7 @@
   font-size: .8em; }
 
 .perfBar-cf {
-  *zoom: 1; }
+  zoom: 1; }
   .perfBar-cf:before {
     content: " ";
     display: table; }
